@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8"> 
+  <title>Feedback</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="shortcut icon" href="public/images/767.jpg">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+
+      <style>
+      @import "https://fonts.googleapis.com/css?family=Montserrat";
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #334;
+  overflow: hidden;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fb-form {
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  position: relative;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+}
+.fb-form h2 {
+  text-align: center;
+  font-size: 1.4em;
+}
+.fb-form input {
+  margin: 15px 0;
+}
+.fb-form input[type="submit"] {
+  margin-top: 0;
+}
+.fb-form textarea {
+  height: 100px;
+}
+
+.rating {
+  margin: 15px auto;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  width: 100%;
+}
+.rating .fa-star {
+  font-size: 2em;
+  cursor: pointer;
+  margin: 0 5.1%;
+  transition: all .5s ease;
+}
+.rating .fa-star.active-rating {
+  transition: all .5s ease;
+  -webkit-animation: rating-highlight .5s ease forwards;
+          animation: rating-highlight .5s ease forwards;
+}
+.rating .fa-star.active-rating:nth-child(5) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star.active-rating:nth-child(1) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star.active-rating:nth-child(1) ~ .fa-star {
+  transition: all .5s ease;
+  color: yellow;
+}
+.rating .fa-star.active-rating:nth-child(2) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star.active-rating:nth-child(2) ~ .fa-star {
+  transition: all .5s ease;
+  color: yellow;
+}
+.rating .fa-star.active-rating:nth-child(3) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star.active-rating:nth-child(3) ~ .fa-star {
+  transition: all .5s ease;
+  color: yellow;
+}
+.rating .fa-star.active-rating:nth-child(4) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star.active-rating:nth-child(4) ~ .fa-star {
+  transition: all .5s ease;
+  color: yellow;
+}
+.rating .fa-star:hover:nth-child(5) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star:hover:nth-child(1) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star:hover:nth-child(1) ~ .fa-star {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star:hover:nth-child(2) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star:hover:nth-child(2) ~ .fa-star {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star:hover:nth-child(3) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star:hover:nth-child(3) ~ .fa-star {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star:hover:nth-child(4) {
+  color: yellow;
+  transition: all .5s ease;
+}
+.rating .fa-star:hover:nth-child(4) ~ .fa-star {
+  color: yellow;
+  transition: all .5s ease;
+}
+
+@-webkit-keyframes rating-highlight {
+  0% {
+    -webkit-transform: rotate(-10deg) scale(1.2);
+            transform: rotate(-10deg) scale(1.2);
+  }
+  20% {
+    -webkit-transform: rotate(10deg) scale(0.8);
+            transform: rotate(10deg) scale(0.8);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg) scale(1.1);
+            transform: rotate(-5deg) scale(1.1);
+  }
+  80% {
+    -webkit-transform: rotate(5deg) scale(0.9);
+            transform: rotate(5deg) scale(0.9);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes rating-highlight {
+  0% {
+    -webkit-transform: rotate(-10deg) scale(1.2);
+            transform: rotate(-10deg) scale(1.2);
+  }
+  20% {
+    -webkit-transform: rotate(10deg) scale(0.8);
+            transform: rotate(10deg) scale(0.8);
+  }
+  50% {
+    -webkit-transform: rotate(-5deg) scale(1.1);
+            transform: rotate(-5deg) scale(1.1);
+  }
+  80% {
+    -webkit-transform: rotate(5deg) scale(0.9);
+            transform: rotate(5deg) scale(0.9);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+}
+
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+	<style>
+		#form-submitted{
+			display: none;
+		}
+	</style>
+</head>
+
+<body translate="no" >
+
+  <div class='fb-form'>
+  <form action='#' class='form-group'>
+    <input class='form-control' placeholder='Name' type='text' id="name">
+    <input class='form-control' placeholder='Email' type='email' id="email">
+    <textarea class='form-control' id='fb-comment' name='' placeholder='Tell us what you think'></textarea>
+<!--
+    <div class='rating'>
+      <i id="1" class='fa fa-star' onclick="getRating();"></i>
+      <i id="2" class='fa fa-star'  onclick="getRating();"></i>
+      <i id="3" class='fa fa-star'  onclick="getRating();"></i>
+      <i id="4" class='fa fa-star' onclick="getRating();"></i>
+      <i id="5" class='fa fa-star' onclick="getRating();"></i>
+    </div>
+-->
+    <input class='form-control btn btn-primary' type='submit' onclick="writeToDatabase();">
+	  <i><p id="form-submitted" style="font-size: 15px;color: aqua" class="text-center">Form submitted successfully</p></i>
+	  </form>
+</div>
+    
+<!--
+    <script id="rendered-js">
+      $('.rating .fa-star').click(function () {
+  $('.rating .active-rating').removeClass('active-rating');
+  $(this).toggleClass('active-rating');
+});
+      //# sourceURL=pen.js
+    </script>
+-->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+	<script>
+		
+	 var config = {
+    apiKey: "AIzaSyC02lpmLWC2g0aGigyQZEwpe7-6JqQ9Q0M",
+    authDomain: "educature-ecb28.firebaseapp.com",
+    databaseURL: "https://educature-ecb28.firebaseio.com",
+    projectId: "educature-ecb28",
+    storageBucket: "educature-ecb28.appspot.com",
+    messagingSenderId: "360132610267"
+  };
+
+  firebase.initializeApp(config);
+	</script>
+	<script>
+	
+	function writeToDatabase() {
+   var database = firebase.database();
+    event.preventDefault();
+    const n = document.getElementById("name").value;
+    const e = document.getElementById("email").value;
+    const p = document.getElementById("fb-comment").value;
+
+    console.log(e +" "+n+ " "+ p);
+
+    firebase.database().ref('feedback').push().set({
+         name: n,
+         email: e,
+         msg: p,
+    });
+		
+	alert("Form has been successfully submitted !");
+	document.getElementById('form-submitted').style.display = "block";
+		
+
+}
+	</script>
+</body>
+
+</html>
+ 

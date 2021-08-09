@@ -1,0 +1,87 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" />
+<title>CodePen - Vanilla Javascript Random Color Generator</title>
+<style>
+      * {
+  box-sizing: border-box;
+  color: #454845;
+  font-weight: 700;
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
+  font-size: 1.4rem;
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+#button {
+  background-color: rgba(220,220,235,0.5);
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all ease 0.3s;
+}
+
+#button:hover {
+  background-color: rgba(220,220,235,0.7);
+  transition: all ease 0.3s;
+}
+
+#output,
+#button {
+  padding: 1rem;
+}
+    </style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div id="container">
+<div id="button" onclick="generate();">
+TAP
+</div>
+<div id="output"></div>
+</div>
+</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+<script id="rendered-js">
+      function generate() {
+
+  var hexValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e"];
+  var newColor = "#";
+
+  for (var i = 0; i < 6; i++) {if (window.CP.shouldStopExecution(0)) break;
+    var x = Math.round(Math.random() * 14);
+    var y = hexValues[x];
+    newColor += y;
+  }window.CP.exitedLoop(0);
+
+  document.getElementById("container").style.backgroundColor = newColor;
+  document.getElementById("output").innerHTML = newColor;
+
+}
+
+generate();
+      //# sourceURL=pen.js
+    </script>
+<script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script>
+</body>
+</html>
